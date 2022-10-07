@@ -23,10 +23,12 @@
 
     .title {
       text-align: center;
+      color: white;
       width: 100%;
       padding-top: 50px;
       padding-bottom: 50px;
       font-family: 'Courier New', Courier, monospace;
+      background-color: rgb(105, 105, 105);
     }
 
     #map {
@@ -56,25 +58,6 @@
     }
 
     #center {
-      position: fixed;
-      left: 50%;
-      top: 50%;
-
-      transform: translate(-50%, -50%);
-      background-color: rgba(0, 0, 0, 0.8);
-      color: white;
-      border-style: solid;
-      border: 3px;
-      padding: 10px;
-      z-index: 9999;
-      opacity: 1;
-      pointer-events: none;
-      display: block;
-      transition: opacity 0.5s linear;
-    }
-
-    #center.hide {
-      opacity: 0;
     }
 
     .student_button {}
@@ -97,30 +80,23 @@
       border-radius: 20px;
       width: 100%;
       height: 100%;
+      max-width: 200px;
+      max-height: 200px;
     }
   </style>
 </head>
 
 <body>
-  <div id="back"></div>
-  <div id="center">
-    <div class="row">
-      <div class="col-xl">
-        <h5>Projeto Lorem Ipsum</h5>
-        <br>
-        <p style="text-align:justify;padding: 20px;">On the other hand, we denounce with righteous indignation and
-          dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire,
-          that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who
-          fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain.
-          These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is
-          untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be
-          welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the
-          obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted.
-          The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to
-          secure other greater pleasures, or else he endures pains to avoid worse pains.</p>
-      </div>
-      <div class="col-sm">
-        <img src="..." class="img-fluid">
+  <div class="modal fade" id="center" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="centerTitle">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="centerBody">
+          ...
+        </div>
       </div>
     </div>
   </div>
@@ -128,7 +104,7 @@
     <div class="title">
       <h1>BENTO RODRIGUES ATRAVÉS DOS SONS</h1>
     </div>
-    <div class="container text-center">
+    <div class="container text-center" style="margin-top:40px;">
       <div class="row">
         <div class="col-sm">
           <img src="map.png" class="img-fluid">
@@ -181,45 +157,44 @@
       </div>
     </div>
   </div>
+  <!-- Modal -->
+  
 
   <script type="text/javascript" src="students.js"></script>
   <script>
     var students_row = document.getElementById('students_row')
+    var current_student = {}
     for (let i=0;i<students.length; i++){
       let student_col = document.createElement('div')
       student_col.classList.add("col-5")
       student_col.classList.add("card")
       student_col.classList.add("student_col")
+
+      student_col.style.marginInline = "20px"
+      student_col.style.marginTop = "10px"
+
       student_col.id = `student_col_${i}`
+      student_col.setAttribute('data-bs-toggle', "modal")
+      student_col.setAttribute('data-bs-target', "#center")
       student_col.innerHTML = `
-      <img src="./quadradas/download.png" alt="" class="icon">
-      <h5 class="card-title student_button">${students[i].name}</h5>
+      <img src="./quadradas/${students[i].image}" alt="" class="icon">
+      <h5 class="card-title student_button" >${students[i].name}</h5>
       `
+      student_col.addEventListener('click', function(){
+        
+        let names = this.id.split("_")
+        let index = Number.parseInt(names[names.length-1])
+        console.log(index)
+        document.getElementById("centerTitle").innerText = `${students[index].name}`
+        document.getElementById("centerBody").innerText = `${students[index].description}`
+        
+      }, false)
+      
+      
       students_row.appendChild(student_col)
     }
-    var back = document.getElementById("back")
     var center = document.getElementById("center")
-    
-
-    back.addEventListener('click', () => {
-      back.classList.add('hide')
-      center.classList.add('hide')
-    })
-
-
-    back.classList.add('hide')
-    center.classList.add('hide')
-
-    var btns = document.getElementsByClassName("student_col")
-    for (i = 0; i < btns.length; i++) {
-      btns[i].addEventListener('click', () => {
-        back.classList.remove('hide')
-        center.classList.remove('hide')
-        console.log("Ola mundo")
-        //document.getElementsByTagName('body')[0].appendChild(back)
-
-      })
-    }
+  
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
