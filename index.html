@@ -46,6 +46,11 @@
       transition: background-color 0.5s linear;
     }
 
+    #students_container{
+      padding-left: max(50px, 1vw);
+      padding-right: max(50px, 1vw);
+    }
+
     .student_col:hover {
       background-color: rgb(209, 209, 209);
     }
@@ -74,6 +79,7 @@
       color: white;
       left: 50%;
       top: 50%;
+      user-select: none;
       font-size: large;
       transform: translate(-50%, -50%);
     }
@@ -98,7 +104,7 @@
     <div class="title">
       <h1>BENTO RODRIGUES ATRAVÉS DOS SONS</h1>
     </div>
-    <div class="container text-center" style="margin-top:40px;">
+    <div class="container-fluid text-center" style="margin-top:40px;">
       <div class="row">
         <div class="col-sm">
           <img src="map.png" class="img-fluid">
@@ -146,14 +152,14 @@
         </div>
       </div>
     </div>
-    <div class="container" id="students_container">
+    <div class="container-fluid" id="students_container">
       <div class="container" style="text-align:center; padding: 70px 0px 0px 0px;">
         <span>Produção dos/das estudantes do 6º ano/2022 da </span> <br>
         <h6>ESCOLA MUNICIPAL BENTO RODRIGUES</h6>
         <span style="font-size:small;"> Secretaria Municipal de Educação de Mariana – MG <br>
           Profa. de História: Silvany Ferreira Diniz - Diretora: Eliene Geralda dos Santos</span>
       </div>
-      <div class="row justify-content-around" id="students_row">
+      <div class="row row-cols-auto justify-content-around" id="students_row">
         <!--<div class="col-5 card student_col">
           <img src="./quadradas/download.png" alt="" class="icon">
           <h5 class="card-title student_button">Ana Beatriz Messias Gonçalves</h5>
@@ -170,7 +176,6 @@
     var current_student = {}
     for (let i=0;i<students.length; i++){
       let student_col = document.createElement('div')
-      student_col.classList.add("col-5")
       student_col.classList.add("card")
       student_col.classList.add("student_col")
 
@@ -183,7 +188,7 @@
       student_col.setAttribute('data-bs-target', "#center")
       student_col.innerHTML = `
       <img src="./quadradas/${students[i].image}" alt="" class="icon">
-      <h5 class="card-title student_button" >${students[i].name}</h5>
+      <h5 class="card-title" >${students[i].name}</h5>
       `
       student_col.addEventListener('click', function(){
         
