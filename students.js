@@ -37,7 +37,7 @@ var students = [
     {
         "name": "Lara Gabriely Silva Souza",
         "description": "Tenho 12 anos. Nasci no dia 19 de julho de 2020. Tenho 6 cachorros, 20 passarinhos, 10 galinhas e 2 galos. Tenho dois irmãos Thamara e Philipe. Gosto de jogar bola. Amo muito meus animais.",
-        "image": "person.png"
+        "image": "lara.jpeg"
     },
     {
         "name": "Letícia de Jesus E. Pinto",

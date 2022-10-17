@@ -34,7 +34,12 @@
     <div class="container-fluid text-center" style="margin-top:40px;">
       <div class="row">
         <div class="col-sm">
-          <img src="map.png" class="img-fluid">
+          <img src="mapa Bento Rodrigues-com icones.png" class="img-fluid" id="map" usemap="#workmap">
+          <map name="workmap" id="map_areas" width="100%" height="100%">
+            <!--<area shape="rect" coords="173.39999389648438, 77.52499389648438, 215.39999389648438, 106.52499389648438" alt="people" href="#">
+            <area shape="rect" coords="196.39999389648438, 132.52499389648438, 233.39999389648438, 168.52499389648438" alt="person" href="#">
+            <area shape="circle" coords="337,300,44" alt="Cup of coffee" href="#">-->
+          </map>
         </div>
         <div class="col-xl">
           <h5>Projeto Pedagógico - "Sonoridades Históricas de Bento Rodrigues”
@@ -98,6 +103,59 @@
 
 
   <script type="text/javascript" src="students.js"></script>
+  <script>
+    var map_buttons = {
+      'people': [0.310752677233843, 0.17357687598409668, 0.38781360913348456, 0.26564758289106394],
+      'person': [0.353763429922015, 0.31522411737943096, 0.4182795589542731, 0.4002124622166315],
+      'apito': [0.5007168349399361, 0.33411041623214216, 0.5419354729327677, 0.3978516748600426],
+      'cuia': [0.6280653612502644, 0.3110399529376733, 0.6961852508423256, 0.3784253958339531],
+      'boi': [0.6995912453219287, 0.40762575442234106, 0.7745231238731961, 0.4660264715991169],
+      'arara': [0.8627700127064803, 0.5644182073326175, 0.9085133418043202, 0.6706576677036125],
+      'som': [0.3243512825872022, 0.4312057404193834, 0.3742514799083102, 0.4957779456187629], 
+      'galinha': [0.6689372950055011, 0.5311657330655208,0.7353541873577609, 0.6277515345501886],
+      'casa': [0.4940119534789695, 0.5487602678336384,0.550149675465216, 0.6265780535867367],
+      'fogueira': [0.49650696334502487, 0.6977730490629757, 0.537674626134939, 0.7689680445392145],
+      'batuques': [0.6636726243707368, 0.7341983955857025, 0.7460079499505651, 0.8037376934927266],
+      'prato': [0.3455588664486731, 0.7606895519561515, 0.4079341131000581, 0.8269174547247459],
+      'quadro': [0.3143712431229806, 0.6017425853115251, 0.36926146017619943, 0.6596920002340452],
+      'onda': [0.7909181275395623, 0.5040564160958785, 0.8320857903294764, 0.5735957140029025]
+    }
+
+    var button_names = Object.keys(map_buttons)
+
+    var map = document.getElementById('map')
+    map.addEventListener('click', function(event){
+      let rect = map.getBoundingClientRect()
+      console.log(`${(event.pageX-rect.x)/rect.width}, ${(event.pageY-(rect.y+window.scrollY))/rect.height}`)
+      x = (event.pageX-rect.x)/rect.width
+      y = (event.pageY-(rect.y+window.scrollY))/rect.height
+
+      /*for (i=0; i<button_names.length; i++){
+        console.log('x', map_buttons[button_names[i]][0], x, map_buttons[button_names[i]][2])
+        if(map_buttons[button_names[i]][0] <= x && map_buttons[button_names[i]][2] >= x){
+          console.log('y', map_buttons[button_names[i]][1], y, map_buttons[button_names[i]][3])
+          if(map_buttons[button_names[i]][1] >= y && map_buttons[button_names[i]][3] <= y){
+            console.log(button_names[i], " apertado")
+          }
+        }
+        
+      }*/
+    })
+
+    let map_areas = document.getElementById('map_areas')
+    
+    for (i=0; i<button_names.length; i++){
+      let new_area = document.createElement('area')
+      new_area.shape = 'rect'
+      let button_coords = map_buttons[button_names[i]]
+      let rect = map.getBoundingClientRect()
+      new_area.id = button_names[i]
+      new_area.href = "#"+button_names[i]
+      new_area.coords = `${button_coords[0]*map.offsetWidth}, ${button_coords[1]*map.offsetHeight}, ${button_coords[2]*map.offsetWidth}, ${button_coords[3]*map.offsetHeight}`
+      map_areas.appendChild(new_area)
+    }
+    
+  </script>
   <script>
     var students_row = document.getElementById('students_row')
     var current_student = {}
