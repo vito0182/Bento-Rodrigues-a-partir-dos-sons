@@ -105,20 +105,76 @@
   <script type="text/javascript" src="students.js"></script>
   <script>
     var map_buttons = {
-      'people': [0.310752677233843, 0.17357687598409668, 0.38781360913348456, 0.26564758289106394],
-      'person': [0.353763429922015, 0.31522411737943096, 0.4182795589542731, 0.4002124622166315],
-      'apito': [0.5007168349399361, 0.33411041623214216, 0.5419354729327677, 0.3978516748600426],
-      'cuia': [0.6280653612502644, 0.3110399529376733, 0.6961852508423256, 0.3784253958339531],
-      'boi': [0.6995912453219287, 0.40762575442234106, 0.7745231238731961, 0.4660264715991169],
-      'arara': [0.8627700127064803, 0.5644182073326175, 0.9085133418043202, 0.6706576677036125],
-      'som': [0.3243512825872022, 0.4312057404193834, 0.3742514799083102, 0.4957779456187629], 
-      'galinha': [0.6689372950055011, 0.5311657330655208,0.7353541873577609, 0.6277515345501886],
-      'casa': [0.4940119534789695, 0.5487602678336384,0.550149675465216, 0.6265780535867367],
-      'fogueira': [0.49650696334502487, 0.6977730490629757, 0.537674626134939, 0.7689680445392145],
-      'batuques': [0.6636726243707368, 0.7341983955857025, 0.7460079499505651, 0.8037376934927266],
-      'prato': [0.3455588664486731, 0.7606895519561515, 0.4079341131000581, 0.8269174547247459],
-      'quadro': [0.3143712431229806, 0.6017425853115251, 0.36926146017619943, 0.6596920002340452],
-      'onda': [0.7909181275395623, 0.5040564160958785, 0.8320857903294764, 0.5735957140029025]
+      'Torcida': {
+        pos: [0.310752677233843, 0.17357687598409668, 0.38781360913348456, 0.26564758289106394],
+        audio: "audios/torcida.mp3",
+        description: "É legal quando a gente vai jogar e ouve a torcida vibrar."
+      },
+      'Futebol': {
+        pos: [0.353763429922015, 0.31522411737943096, 0.4182795589542731, 0.4002124622166315],
+        audio: "",
+        description: "A bola batendo no travessão dá uma acelerada no coração."
+      },
+      'Apito': {
+        pos: [0.5007168349399361, 0.33411041623214216, 0.5419354729327677, 0.3978516748600426],
+        audio: "",
+        description: "Quando o apito sopra dá pra saber quando é o pênalti."
+      },
+      'Bateia': {
+        pos: [0.6280653612502644, 0.3110399529376733, 0.6961852508423256, 0.3784253958339531],
+        audio: "",
+        description: "É bom porque a gente sabe que tem ouro."
+      },
+      'Boi': {
+        pos: [0.6995912453219287, 0.40762575442234106, 0.7745231238731961, 0.4660264715991169],
+        audio: "audios/boi.mp3",
+        description: "O mugido do boi não me assusta."
+      },
+      'Arara': {
+        pos: [0.8627700127064803, 0.5644182073326175, 0.9085133418043202, 0.6706576677036125],
+        audio: "",
+        description: "A gente conhece o barulho da maritaca de longe."
+      },
+      'Sirene da escola': {
+        pos: [0.3243512825872022, 0.4312057404193834, 0.3742514799083102, 0.4957779456187629], 
+        audio: "",
+        description: "O barulho é irritante, mas é legal quando é hora do recreio."
+      },
+      'Galinha': {
+        pos: [0.6689372950055011, 0.5311657330655208,0.7353541873577609, 0.6277515345501886],
+        audio: "audios/galinheiro.mp3",
+        description: "Galinha quando cacareja acorda a gente."
+      },
+      'Pessoas conversando': {
+        pos: [0.4940119534789695, 0.5487602678336384,0.550149675465216, 0.6265780535867367],
+        audio: "audios/pessoas conversando.mp3",
+        description: "É bom quando tem fofoca."
+      },
+      'Festas juninas': {
+        pos: [0.49650696334502487, 0.6977730490629757, 0.537674626134939, 0.7689680445392145],
+        audio: "audios/fogo.mp3",
+        description: "O barulho da fogueira é relaxante."
+      },
+      'Bandas de música': {
+        pos: [0.6636726243707368, 0.7341983955857025, 0.7460079499505651, 0.8037376934927266],
+        audio: "",
+        description: "Lá no Bento, quando passava, eu tinha medo do barulho."
+      },
+      'Garfo batendo no prato': {
+        pos: [0.3455588664486731, 0.7606895519561515, 0.4079341131000581, 0.8269174547247459],
+        audio: "",
+        description: "Parece que o prato vai quebrar na hora que arranha."
+      },
+      'Explicação Professor': {
+        pos: [0.3143712431229806, 0.6017425853115251, 0.36926146017619943, 0.6596920002340452],
+        audio: "",
+        description: "São inteligentes, é bom que a gente aprende, mas tem alguns estressados."
+      },
+      'Cachoeira': {
+        pos: [0.7909181275395623, 0.5040564160958785, 0.8320857903294764, 0.5735957140029025],
+        audio: "audios/cachoeira.mp3",
+        description: "O barulho é bom e quando ouço eu quero pular."
+      },
     }
 
     var button_names = Object.keys(map_buttons)
@@ -147,13 +203,50 @@
     for (i=0; i<button_names.length; i++){
       let new_area = document.createElement('area')
       new_area.shape = 'rect'
-      let button_coords = map_buttons[button_names[i]]
+      let button_coords = map_buttons[button_names[i]].pos
       let rect = map.getBoundingClientRect()
       new_area.id = button_names[i]
       new_area.href = "#"+button_names[i]
       new_area.coords = `${button_coords[0]*map.offsetWidth}, ${button_coords[1]*map.offsetHeight}, ${button_coords[2]*map.offsetWidth}, ${button_coords[3]*map.offsetHeight}`
+
+      new_area.setAttribute('data-bs-toggle', "modal")
+
+      new_area.setAttribute('data-bs-target', "#center")
+
+      new_area.addEventListener('click', function(){
+        document.getElementById("centerTitle").innerHTML = `${this.id}`
+        document.getElementById("centerBody").innerHTML = `
+        
+        <span>${map_buttons[this.id].description}</span>
+        <br/><br/>
+        <audio autoplay="true"
+            controls
+            src="${map_buttons[this.id].audio}">
+                <a href="${map_buttons[this.id].audio}">
+                    Download audio
+                </a>
+        </audio>
+        
+        `
+      })
       map_areas.appendChild(new_area)
     }
+
+    document.getElementById('center').addEventListener('hide.bs.modal', () => {
+      document.querySelectorAll('audio').forEach(el => el.pause());
+    })
+
+    function update_areas_coords(){
+      for (i=0; i<button_names.length; i++){
+        let rect = map.getBoundingClientRect()
+        let button_coords = map_buttons[button_names[i]].pos
+        document.getElementById(button_names[i]).coords = `${button_coords[0]*map.offsetWidth}, ${button_coords[1]*map.offsetHeight}, ${button_coords[2]*map.offsetWidth}, ${button_coords[3]*map.offsetHeight}`
+      }
+    }
+
+    window.addEventListener('resize', ()=>{
+      update_areas_coords()
+    })
     
   </script>
   <script>
@@ -180,14 +273,15 @@
         let names = this.id.split("_")
         let index = Number.parseInt(names[names.length - 1])
         console.log(index)
-        document.getElementById("centerTitle").innerText = `${students[index].name}`
-        document.getElementById("centerBody").innerText = `${students[index].description}`
+        document.getElementById("centerTitle").innerHTML = `${students[index].name}`
+        document.getElementById("centerBody").innerHTML = `${students[index].description}`
 
       }, false)
 
 
       students_row.appendChild(student_col)
     }
+
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
