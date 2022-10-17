@@ -1,0 +1,90 @@
+h1 {
+    font-weight: 500;
+}
+
+body {
+    padding-bottom: 50px;
+  }
+
+  .music_button_col {
+    padding: 10px 0px;
+  }
+
+  .music_button {
+    padding: 10px 5px;
+  }
+
+  .title {
+    text-align: center;
+    color: white;
+    width: 100%;
+    padding-top: 45px;
+    padding-bottom: 45px;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgb(105, 105, 105);
+  }
+
+  #map {
+    min-width: 200px;
+    min-height: 200px;
+    padding: 20px;
+  }
+
+  .student_col {
+    margin: 20px;
+    width: 250px;
+    cursor: pointer;
+    text-align: center;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    transition: background-color 0.5s linear;
+  }
+
+  #students_container {
+    padding-left: max(50px, 1vw);
+    padding-right: max(50px, 1vw);
+  }
+
+  .student_col:hover {
+    background-color: rgb(209, 209, 209);
+  }
+
+  .student_name {
+    user-select: none;
+  }
+
+  .icon {
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    max-width: 200px;
+    max-height: 200px;
+    margin: auto;
+    pointer-events: none;
+  }
+
+  .music_div {
+    width: 100%;
+    height: 100%;
+    min-height: 150px;
+    background-color: rgb(116, 116, 116);
+    transition: background-color 0.4s;
+    cursor: pointer;
+  }
+
+  .music_div:hover {
+    background-color: rgb(96, 96, 96);
+  }
+
+  .music_text {
+    position: absolute;
+    margin: 0;
+    padding: 40px;
+    color: white;
+    left: 50%;
+    top: 50%;
+    user-select: none;
+    font-size: large;
+    transform: translate(-50%, -50%);
+  }

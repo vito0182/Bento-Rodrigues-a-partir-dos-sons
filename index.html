@@ -8,91 +8,9 @@
   <title>BENTO RODRIGUES ATRAVÉS DOS SONS</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-  <style>
-    body {
-      padding-bottom: 50px;
-    }
 
-    .music_button_col {
-      padding: 10px 0px;
-    }
+  <link rel="stylesheet" href="style.css">
 
-    .music_button {
-      padding: 10px 5px;
-    }
-
-    .title {
-      text-align: center;
-      color: white;
-      width: 100%;
-      padding-top: 50px;
-      padding-bottom: 50px;
-      font-family: 'Courier New', Courier, monospace;
-      background-color: rgb(105, 105, 105);
-    }
-
-    #map {
-      min-width: 200px;
-      min-height: 200px;
-      padding: 20px;
-    }
-
-    .student_col {
-      width: 260px;
-      cursor: pointer;
-      text-align: center;
-      padding: 20px;
-      background-color: rgb(238, 238, 238);
-      transition: background-color 0.2s linear;
-    }
-
-    #students_container{
-      padding-left: max(50px, 1vw);
-      padding-right: max(50px, 1vw);
-    }
-
-    .student_col:hover {
-      background-color: rgb(199, 199, 199);
-    }
-
-    .student_name{
-      user-select: none;
-    }
-
-    .icon {
-      border-radius: 20px;
-      width: 100%;
-      height: 100%;
-      max-width: 200px;
-      max-height: 200px;
-      margin: auto;
-      pointer-events: none;
-    }
-
-    .music_div{
-      width: 100%;
-      height: 100%;
-      min-height: 150px;
-      background-color: rgb(116, 116, 116);
-      transition: background-color 0.4s;
-      cursor: pointer;
-    }
-    .music_div:hover{
-      background-color: rgb(96, 96, 96);
-    }
-
-    .music_text{
-      position: absolute;
-      margin: 0;
-      padding: 40px;
-      color: white;
-      left: 50%;
-      top: 50%;
-      user-select: none;
-      font-size: large;
-      transform: translate(-50%, -50%);
-    }
-  </style>
 </head>
 
 <body>
@@ -119,18 +37,18 @@
           <img src="map.png" class="img-fluid">
         </div>
         <div class="col-xl">
-          <h5>Projeto Lorem Ipsum</h5>
+          <h5>Projeto Pedagógico - "Sonoridades Históricas de Bento Rodrigues”
+            </h5>
           <br>
-          <p style="text-align:justify;padding: 20px;">On the other hand, we denounce with righteous indignation and
-            dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by
-            desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to
-            those who fail in their duty through weakness of will, which is the same as saying through shrinking from
-            toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of
-            choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is
-            to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the
-            obligations of business it will frequently occur that pleasures have to be repudiated and annoyances
-            accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects
-            pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.</p>
+          <p style="text-align:justify;padding: 0px 20px 0px 20px;">No segundo semestre de 2022, foi desenvolvido o projeto
+            pedagógico “Sonoridades Históricas de Bento Rodrigues” com alunos do 6º ano, face à parceria promovida entre
+            a Escola Municipal Bento Rodrigues e a equipe de docentes e estudantes do projeto “Gualaxo Vivo: histórias
+            através de sons”, vinculado à Universidade Federal de Ouro Preto (UFOP). O objetivo deste projeto foi
+            proceder à identificação de sons históricos que ecoavam no Subdistrito de Bento Rodrigues antes da queda da
+            Barragem de Fundão, recorrendo, para isso, às memórias dos(as) alunos(as) do 6º ano, de forma associada ao
+            levantamento de áudios e imagens, bem como à elaboração de textos pelos próprios estudantes. Tais produções
+            encontram-se veiculadas nesta plataforma digital, da qual os(as) alunos(a) aprenderam a acionar códigos
+            básicos, a fim de que ela possa ser continuamente atualizada pelos integrantes da Escola.</p>
           <div class="container">
             <div id="musicas" class="carousel slide" data-bs-ride="carousel">
               <div class="carousel-inner">
@@ -156,60 +74,60 @@
                 <span class="visually-hidden">Next</span>
               </button>
             </div>
-            </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="container-fluid" id="students_container">
-      <div class="container" style="text-align:center; padding: 70px 0px 0px 0px;">
-        <span>Produção dos/das estudantes do 6º ano/2022 da </span> <br>
-        <h6>ESCOLA MUNICIPAL BENTO RODRIGUES</h6>
-        <span style="font-size:small;"> Secretaria Municipal de Educação de Mariana – MG <br>
-          Profa. de História: Silvany Ferreira Diniz - Diretora: Eliene Geralda dos Santos</span>
-      </div>
-      <div class="row row-cols-auto justify-content-around" id="students_row">
-        <!--<div class="col-5 card student_col">
+  </div>
+  <div class="container-fluid" id="students_container">
+    <div class="container" style="text-align:center; padding: 70px 0px 0px 0px;">
+      <span>Produção dos/das estudantes do 6º ano/2022 da </span> <br>
+      <h6>ESCOLA MUNICIPAL BENTO RODRIGUES</h6>
+      <span style="font-size:small;"> Secretaria Municipal de Educação de Mariana – MG <br>
+        Profa. de História: Silvany Ferreira Diniz - Diretora: Eliene Geralda dos Santos</span>
+    </div>
+    <div class="row row-cols-auto justify-content-around" id="students_row">
+      <!--<div class="col-5 card student_col">
           <img src="./quadradas/download.png" alt="" class="icon">
           <h5 class="card-title student_button">Ana Beatriz Messias Gonçalves</h5>
         </div>-->
-      </div>
     </div>
   </div>
+  </div>
   <!-- Modal -->
-  
+
 
   <script type="text/javascript" src="students.js"></script>
   <script>
     var students_row = document.getElementById('students_row')
     var current_student = {}
-    for (let i=0;i<students.length; i++){
+    for (let i = 0; i < students.length; i++) {
       let student_col = document.createElement('div')
       student_col.classList.add("card")
       student_col.classList.add("student_col")
 
-      student_col.style.marginInline = "20px"
+      student_col.style.marginInline = "10px"
       student_col.style.marginTop = "10px"
 
       student_col.id = `student_col_${i}`
       student_col.setAttribute('data-bs-toggle', "modal")
-      
+
       student_col.setAttribute('data-bs-target', "#center")
       student_col.innerHTML = `
       <img src="./quadradas/${students[i].image}" alt="" class="icon">
       <h5 class="card-title student_name">${students[i].name}</h5>
       `
-      student_col.addEventListener('click', function(){
-        
+      student_col.addEventListener('click', function () {
+
         let names = this.id.split("_")
-        let index = Number.parseInt(names[names.length-1])
+        let index = Number.parseInt(names[names.length - 1])
         console.log(index)
         document.getElementById("centerTitle").innerText = `${students[index].name}`
         document.getElementById("centerBody").innerText = `${students[index].description}`
-        
+
       }, false)
-      
-      
+
+
       students_row.appendChild(student_col)
     }
   </script>
