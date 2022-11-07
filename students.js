@@ -22,7 +22,7 @@ var students = [
     {
         "name": "Ítalo Eleutério dos Santos",
         "description": "Eu nasci dia 17 de dezembro de 2010. Sou do 6º ano, tenho 11 anos. Minha comida favorita é strogonoff. Tenho 6 cachorros. ",
-        "image": "person.png"
+        "image": "italo.png"
     },
     {
         "name": "Júlia Gabrielly Silva",

@@ -122,7 +122,7 @@
       },
       'Bateia': {
         pos: [0.6280653612502644, 0.3110399529376733, 0.6961852508423256, 0.3784253958339531],
-        audio: "",
+        audio: "audios/bateia.mp3",
         description: "É bom porque a gente sabe que tem ouro."
       },
       'Boi': {
@@ -132,7 +132,7 @@
       },
       'Arara': {
         pos: [0.8627700127064803, 0.5644182073326175, 0.9085133418043202, 0.6706576677036125],
-        audio: "",
+        audio: "audios/maritaca.mp3",
         description: "A gente conhece o barulho da maritaca de longe."
       },
       'Sirene da escola': {
@@ -157,7 +157,7 @@
       },
       'Bandas de música': {
         pos: [0.6636726243707368, 0.7341983955857025, 0.7460079499505651, 0.8037376934927266],
-        audio: "",
+        audio: "audios/banda.mp3",
         description: "Lá no Bento, quando passava, eu tinha medo do barulho."
       },
       'Garfo batendo no prato': {
@@ -167,7 +167,7 @@
       },
       'Explicação Professor': {
         pos: [0.3143712431229806, 0.6017425853115251, 0.36926146017619943, 0.6596920002340452],
-        audio: "",
+        audio: "audios/professores.mp3",
         description: "São inteligentes, é bom que a gente aprende, mas tem alguns estressados."
       },
       'Cachoeira': {
@@ -217,8 +217,7 @@
         document.getElementById("centerTitle").innerHTML = `${this.id}`
         document.getElementById("centerBody").innerHTML = `
         
-        <span>${map_buttons[this.id].description}</span>
-        <br/><br/>
+        <p class="card-text">${map_buttons[this.id].description}</p>
         <audio autoplay="true"
             controls
             src="${map_buttons[this.id].audio}">
@@ -226,7 +225,6 @@
                     Download audio
                 </a>
         </audio>
-        
         `
       })
       map_areas.appendChild(new_area)
