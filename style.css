@@ -24,10 +24,14 @@ body{
     background-color: black;
   }
 
+  #content{
+    padding-inline: max(20px, 10vw);
+  }
+
   #map {
-    min-width: 200px;
+    min-width: min(400px, 100%);
     min-height: 200px;
-    padding: 20px;
+    width: 50vw;
   }
 
   .student_col {
