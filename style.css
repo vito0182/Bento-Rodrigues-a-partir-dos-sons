@@ -2,9 +2,9 @@ h1 {
     font-weight: 500;
 }
 
-body {
-    padding-bottom: 50px;
-  }
+body{
+  padding-bottom: 80px;
+}
 
   .music_button_col {
     padding: 10px 0px;
@@ -21,7 +21,7 @@ body {
     padding-top: 45px;
     padding-bottom: 45px;
     font-family: 'Courier New', Courier, monospace;
-    background-color: rgb(105, 105, 105);
+    background-color: black;
   }
 
   #map {
@@ -96,4 +96,33 @@ body {
     border-style: solid;
     cursor: pointer;
     text-align: center;
+  }
+
+  .footer{
+    background-color: black;
+    color: white;
+    font-family: 'KohinoorTeleguMedium', sans-serif;
+    font-size: 14px;
+    padding:  5vh 10vw;
+    
+  }
+
+  .footer div.col-md{
+    padding-top: 20px;
+  }
+
+  .logos{
+    padding-top: 20px;
+    height: 200px;
+    width: 100%;
+  }
+
+  .logos div{
+    text-align: center;
+    margin:auto;
+  }
+
+  .logos img{
+    max-width: 300px;
+    max-height: 200px;
   }

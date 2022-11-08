@@ -51,7 +51,7 @@ var map_buttons = {
       pos: [0.3243512825872022, 0.4312057404193834, 0.3742514799083102, 0.4957779456187629], 
       audio: "",
       text: "O barulho é irritante, mas é legal quando é hora do recreio.",
-      image: 'sirene.png',
+      image: 'sirene.jpg',
       image_description: 'Referência: Escola de Bento Rodrigues é reinaugurada. Jornal O Liberal, 25 dez. 2012. Disponível em: http://antigo.jornaloliberal.net/noticia/escola-de-bento-rodrigues-e-inaugurada/. Acesso em: 26 set. 2022.',
       icon: 'sirene.jpg'
     },

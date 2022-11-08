@@ -43,9 +43,10 @@
         </div>
         <div class="col-xl">
           <h5>Projeto Pedagógico - "Sonoridades Históricas de Bento Rodrigues”
-            </h5>
+          </h5>
           <br>
-          <p style="text-align:justify;padding: 0px 20px 0px 20px;">No segundo semestre de 2022, foi desenvolvido o projeto
+          <p style="text-align:justify;padding: 0px 20px 0px 20px;">No segundo semestre de 2022, foi desenvolvido o
+            projeto
             pedagógico “Sonoridades Históricas de Bento Rodrigues” com alunos do 6º ano, face à parceria promovida entre
             a Escola Municipal Bento Rodrigues e a equipe de docentes e estudantes do projeto “Gualaxo Vivo: histórias
             através de sons”, vinculado à Universidade Federal de Ouro Preto (UFOP). O objetivo deste projeto foi
@@ -92,37 +93,74 @@
         Profa. de História: Silvany Ferreira Diniz - Diretora: Eliene Geralda dos Santos</span>
     </div>
     <div class="row row-cols-auto justify-content-around" id="students_row">
-      <!--<div class="col-5 card student_col">
-          <img src="./quadradas/download.png" alt="" class="icon">
-          <h5 class="card-title student_button">Ana Beatriz Messias Gonçalves</h5>
-        </div>-->
+      <!--Students GRID-->
     </div>
   </div>
+  <!-- 
+Apoio:
+	
+ 	Departamento de Música – Instituto de Filosofia, Arte e Cultura
+Programa de Pós-graduação em História
+Projeto “Gualaxo Vivo: histórias através de sons” (www.gualaxovivo.com.br)	Logo	Nome da Escola de Ensino Médio
+Nome dos professores e estudantes que estão ajudando a montar o site.
+ -->
+
+  <div class="container-fluid footer">
+    <div class="row row-cols-auto justify-content-around">
+      <div class="col-md">
+          <span>
+              Apoio: <br>
+              <ul>
+                <li>Departamento de Música – Instituto de Filosofia, Arte e Cultura</li>
+                <li>Programa de Pós-graduação em História</li>
+                <li>Projeto “Gualaxo Vivo: histórias através de sons” (www.gualaxovivo.com.br)</li>
+              </ul>
+          </span>
+      </div>
+      <div class="col-md">
+        <span>
+          Realização <br>
+          <ul>
+            <li>Osvaldo Novais Júnior, coordenador do projeto Programa Ação (IFMG)</li>
+            <li>Bolsistas do Programa Ação (IFMG)</li>
+          </ul>
+      </span>
+      </div>
+    </div>
   </div>
-  <!-- Modal -->
+  <div class="row row-cols-auto justify-content-around logos">
+    <div class="col-sm">
+        <img src="logo-ufop.png" alt="" class="">
+    </div>
+    <div class="col-sm">
+      <img src="logo-ifmg.png" alt="" class="">
+    </div>
+    <div class="col-sm">
+      <img src="logo-programação.png" alt="" class="">
+    </div>
+  </div>
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
-    crossorigin="anonymous">
-  </script>
-  
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous">
+    </script>
+
   <script type="text/javascript" src="students.js"></script>
   <script type="text/javascript" src="map_buttons.js"></script>
   <script>
 
     var popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
     var popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
-    
+
 
     var button_names = Object.keys(map_buttons)
 
     var map = document.getElementById('map')
-    map.addEventListener('click', function(event){
+    map.addEventListener('click', function (event) {
       let rect = map.getBoundingClientRect()
-      console.log(`${(event.pageX-rect.x)/rect.width}, ${(event.pageY-(rect.y+window.scrollY))/rect.height}`)
-      x = (event.pageX-rect.x)/rect.width
-      y = (event.pageY-(rect.y+window.scrollY))/rect.height
+      console.log(`${(event.pageX - rect.x) / rect.width}, ${(event.pageY - (rect.y + window.scrollY)) / rect.height}`)
+      x = (event.pageX - rect.x) / rect.width
+      y = (event.pageY - (rect.y + window.scrollY)) / rect.height
 
       /*for (i=0; i<button_names.length; i++){
         console.log('x', map_buttons[button_names[i]][0], x, map_buttons[button_names[i]][2])
@@ -137,24 +175,24 @@
     })
 
     let map_areas = document.getElementById('map_areas')
-    
-    for (i=0; i<button_names.length; i++){
+
+    for (i = 0; i < button_names.length; i++) {
       let new_area = document.createElement('area')
       new_area.shape = 'rect'
       let button_coords = map_buttons[button_names[i]].pos
       let rect = map.getBoundingClientRect()
       new_area.id = button_names[i]
-      new_area.href = "#"+button_names[i]
-      new_area.coords = `${button_coords[0]*map.offsetWidth}, ${button_coords[1]*map.offsetHeight}, ${button_coords[2]*map.offsetWidth}, ${button_coords[3]*map.offsetHeight}`
+      new_area.href = "#" + button_names[i]
+      new_area.coords = `${button_coords[0] * map.offsetWidth}, ${button_coords[1] * map.offsetHeight}, ${button_coords[2] * map.offsetWidth}, ${button_coords[3] * map.offsetHeight}`
 
       new_area.setAttribute('data-bs-toggle', "modal")
 
       new_area.setAttribute('data-bs-target', "#center")
 
-      new_area.addEventListener('click', function(){
+      new_area.addEventListener('click', function () {
         document.getElementById("centerTitle").innerHTML = `${this.id}`
         document.getElementById("centerBody").innerHTML = `
-        <img src="${'map_images/'+map_buttons[this.id].image}" class="clickable" data-bs-placement="bottom" data-bs-toggle="popover" data-bs-title="${this.id}" data-bs-content="${map_buttons[this.id].image_description}">
+        <img src="${'map_images/' + map_buttons[this.id].image}" class="clickable" data-bs-placement="bottom" data-bs-toggle="popover" data-bs-title="${this.id}" data-bs-content="${map_buttons[this.id].image_description}">
         
         <p class="card-text" style="text-align:center;">${map_buttons[this.id].text}</p>
         <audio autoplay="true"
@@ -168,30 +206,30 @@
         popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
         popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
       })
-      
+
       map_areas.appendChild(new_area)
-      
+
     }
 
     document.getElementById('center').addEventListener('hide.bs.modal', () => {
       document.querySelectorAll('audio').forEach(el => el.pause());
     })
 
-    function update_areas_coords(){
-      for (i=0; i<button_names.length; i++){
+    function update_areas_coords() {
+      for (i = 0; i < button_names.length; i++) {
         let rect = map.getBoundingClientRect()
         let button_coords = map_buttons[button_names[i]].pos
-        document.getElementById(button_names[i]).coords = `${button_coords[0]*map.offsetWidth}, ${button_coords[1]*map.offsetHeight}, ${button_coords[2]*map.offsetWidth}, ${button_coords[3]*map.offsetHeight}`
+        document.getElementById(button_names[i]).coords = `${button_coords[0] * map.offsetWidth}, ${button_coords[1] * map.offsetHeight}, ${button_coords[2] * map.offsetWidth}, ${button_coords[3] * map.offsetHeight}`
       }
     }
 
-    setTimeout(()=>{update_areas_coords()}, 100)
-    
+    setTimeout(() => { update_areas_coords() }, 100)
 
-    window.addEventListener('resize', ()=>{
+
+    window.addEventListener('resize', () => {
       update_areas_coords()
     })
-    
+
   </script>
   <script>
     var students_row = document.getElementById('students_row')
@@ -227,7 +265,7 @@
     }
 
   </script>
-  
+
 </body>
 
 </html>
