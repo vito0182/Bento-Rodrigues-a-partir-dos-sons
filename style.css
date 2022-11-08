@@ -45,6 +45,10 @@ body{
     transition: background-color 0.5s linear;
   }
 
+  #students_row{
+    padding-top: 20px;
+  }
+
   #students_container {
     padding-left: max(50px, 1vw);
     padding-right: max(50px, 1vw);
