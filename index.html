@@ -161,9 +161,8 @@
         <img src="${'map_images/' + map_buttons[this.id].image}" class="clickable" data-bs-placement="bottom" data-bs-toggle="popover" data-bs-title="${this.id}" data-bs-content="${map_buttons[this.id].image_description}">
         
         <p class="card-text" style="text-align:center;">${map_buttons[this.id].text}</p>
-        <audio autoplay="true"
-            controls
-            src="${map_buttons[this.id].audio}">
+        <audio controls autoplay="true" data-bs-toggle="tooltip" data-bs-placement="top" title="Referência do áudio:  gravação em casa dos alunos do 6° ano.">
+          <source src="${map_buttons[this.id].audio}" type="audio/mpeg">
                 <a href="${map_buttons[this.id].audio}">
                     Download audio
                 </a>
@@ -171,6 +170,10 @@
         `
         popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
         popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+          return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
       })
 
       map_areas.appendChild(new_area)
