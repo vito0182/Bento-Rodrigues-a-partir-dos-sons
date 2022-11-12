@@ -9,7 +9,7 @@ var map_buttons = {
     },
     'Futebol': {
       pos: [0.353763429922015, 0.31522411737943096, 0.4182795589542731, 0.4002124622166315],
-      audio: "",
+      audio: "audios/torcida_de_futebol.mp3",
       text: "A bola batendo no travessão dá uma acelerada no coração.",
       image: 'futebol.png',
       image_description: ' Referência:  Time de Futebol de Bento Rodrigues\nFoto cedida por Júlia Silva\n15 de maio de 2022',
@@ -17,7 +17,7 @@ var map_buttons = {
     },
     'Apito': {
       pos: [0.5007168349399361, 0.33411041623214216, 0.5419354729327677, 0.3978516748600426],
-      audio: "",
+      audio: "audios/apito.mp3",
       text: "Quando o apito sopra dá pra saber quando é o pênalti.",
       image: 'apito.jpg',
       image_description: 'Referência: Jogo de futebol entre Paracatu e Santa Rita Durão\nFoto: Daniela Felix/Jornal A Sirene\nVisualizado em: https://www.facebook.com/JornalSirene/photos/a.1910601809203321/1910601935869975 acesso 24 out. 2022',
@@ -49,7 +49,7 @@ var map_buttons = {
     },
     'Sirene da escola': {
       pos: [0.3243512825872022, 0.4312057404193834, 0.3742514799083102, 0.4957779456187629], 
-      audio: "",
+      audio: "audios/sirene.mp3",
       text: "O barulho é irritante, mas é legal quando é hora do recreio.",
       image: 'sirene.jpg',
       image_description: 'Referência: Escola de Bento Rodrigues é reinaugurada. Jornal O Liberal, 25 dez. 2012. Disponível em: http://antigo.jornaloliberal.net/noticia/escola-de-bento-rodrigues-e-inaugurada/. Acesso em: 26 set. 2022.',
@@ -89,10 +89,10 @@ var map_buttons = {
     },
     'Garfo batendo no prato': {
       pos: [0.3455588664486731, 0.7606895519561515, 0.4079341131000581, 0.8269174547247459],
-      audio: "",
+      audio: "audios/garfo_no_prato.mp3",
       text: "Parece que o prato vai quebrar na hora que arranha.",
       image: 'prato.jpg',
-      image_description: '',
+      image_description: 'Barulho do prato na hora do refeitório. \nImagem do acervo pessoal',
       icon: 'person.png'
     },
     'Explicação Professor': {
