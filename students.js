@@ -5,6 +5,11 @@ var students = [
         "image": "ana_m.jpeg"
     },
     {
+        "name": "Ana Beatriz Messias Gonçalves",
+        "description": "Eu sou Ana Beatriz Messias Gonçalves, tenho 11 anos. Eu gosto muito de andar à cavalo, inclusive tenho três. Gosto de andar de bicicleta e também de cantar e dançar",
+        "image": "ana_m_g.png"
+    },
+    {
         "name": "Ana Beatriz Larri Santos",
         "description": "Tenho 11 anos, moro com meus pais e com meu irmão. O que eu mais gosto de fazer é dançar, cantar e andar de bicicleta. Tenho 3 cachorrinhos e estou no 6º ano.",
         "image": "ana_l.png"
